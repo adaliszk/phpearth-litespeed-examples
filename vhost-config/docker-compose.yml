@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+
+  litespeed:
+    image: phpearth/php:7.3-litespeed-preconfigured
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - "./docker/etc/litespeed/vhosts:/etc/litespeed/vhosts"
+      - "./docker/etc/litespeed/httpd_config.conf:/etc/litespeed/httpd_config.conf"
+      - "./html:/var/www/html"
+    ports:
+      - ${HTTP_PORT:-8080}:8088
+      - ${ADMIN_PORT:-8000}:7080

@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+
+  litespeed:
+    image: phpearth/php:7.3-litespeed-overwrite
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - "./html:/var/www/html"
+    ports:
+      - ${HTTP_PORT:-8080}:8088
+      - ${ADMIN_PORT:-8000}:7080
