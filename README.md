@@ -46,7 +46,7 @@ How to set up your virtual host?
 By default, the `phpearth/php` gives you the after-installation state of the 
 litespeed server. This server exposes two ports:
 
-- `8088`: Default vhost, usually an Example page with links to documentation.
+- `8088`: Default vhost, usually an Example page with links to documentation.  
   I've redirected this port to a widely used `8080` using docker-compose.
 
 - `7080`: Administration panel, I've redirected this port to `8000` using
